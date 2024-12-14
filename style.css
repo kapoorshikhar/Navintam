@@ -1,0 +1,314 @@
+body, h1,  h3  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+#new{
+    font-size: x-large;
+    font-weight: 900;
+}
+
+
+
+h2{
+ text-align: center;
+}
+
+p{
+    text-align: justify;
+    margin-right:10;
+    margin-left: 5;
+    
+}
+
+
+
+.navbar{
+    display: flex;
+      justify-content: space-between;
+      background: linear-gradient(to right, rgb(255, 0, 55), rgb(138, 3, 138));
+      padding: 10px 20px;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+}
+
+.navbar-logo {
+    display: flex;
+    
+  }
+
+.navbar-logo img {
+    width: 40px;
+    height: 100%;
+    margin-right: 10px;
+}
+
+
+main {
+    padding: 20px;
+}
+
+#latest-news h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Articles Container */
+
+    .articles-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+
+    }
+
+/* Card Styling */
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.card-content {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    background: linear-gradient(to right, rgb(255, 0, 55), rgb(138, 3, 138));
+    padding: 10px 20px;
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+/* Styling for GNews API Section */
+#latest-news,
+#gnews-articles {
+    margin: 20px 0;
+    justify-content: space-evenly;
+    
+}
+
+#latest-news h2,
+#gnews-articles h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Shared card styling */
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 3px 4px 6px rgba(59, 57, 57, 0.8);
+    transition: transform 0.9s;
+    display: inline;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #555;
+}
+
+.card-content  {
+    text-decoration: none;
+    color: #0a0a0a;
+    font-weight: bold;
+}
+
+.card-content  {
+    text-decoration: none;
+}
+/* About Us Section */
+#about-us {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.about-text strong {
+    color: #000;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#hes{
+    height: 800in;
+    width: 800px;
+    border-radius: 5%;
+    background-color: crimson;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+}
+
+.read-more{
+    height: 800px;
+    width: 800px;
+    border-radius: 5%;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+}
+#headline{
+    text-align: right;
+    font-size: x-large;
+    font-weight: 600;
+    margin: 10px;
+    padding: 10px;
+    width: 33%;
+}
+#Social{
+    width: 33%; 
+    display: block;
+    font-weight: 600;
+}
+.footer{
+
+    /* margin-top: 10px; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+b.button-container {
+    position: relative;
+  }
+
+  .custom-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #020202;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .custom-button:hover {
+    background-color: #b30009;
+  }
+
+  .custom-button::before {
+    content: "Read More";
+  }
+
+  .custom-button:hover::before {
+    content: "Click Me";
+  }
+
+  .custom-button.clicked {
+    background-color: #15df44;
+  }
+
+  .custom-button.clicked::before {
+    content: "Thank You!";
+  }
+  .soc{
+    display: flexbox
+  }
+  #futer{
+    text-align: center;
+    font-weight: 600;
+  }

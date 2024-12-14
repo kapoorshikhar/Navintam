@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navintam Samacharam</title>
+    <linK rel="shortcut icon" type="x-icon" href="/img/logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <navbat>
+        <div class="navbar">
+            <div class="navbar-logo">
+            <a  href="index.html"><img src="img/logo.svg" ></a> 
+            <a id="new" href="index.html">Navintam Samacharam           </a>
+        </div>
+        <div id="headline">
+            <a href="index.html">Home</a>
+            <a href="#Matakhandh">Opinion </a>
+            <a href="#gnews-articles">Latest News</a>
+            <a href="about.html">About Us</a>
+        </div>
+    </div>
+    </navbat>
+
+    <main>
+        <section id="gnews-articles">
+            <h2>Latest <span id="hes">News</span> </h2>
+            <div class="articles-container" id="gnews-container">
+                <!-- Dynamic content from GNews API will be inserted here -->
+            </div>
+        </section>  
+        <section id="Matakhandh">
+            <h2>Matakhandh</h2>
+            <div class="articles-container">
+                <div class="card bor-card">
+                    <img src="./img/saverker.jpg" alt="Article Image">
+                    <div class="card-content">
+                        <h3>Savarkar: The Controversial Figure</h3>
+                        <p>Revolution is necessary when natural political evolution is supressed to restore justice</p>
+                        <div >
+                            <a href="./matakhanda/01.html"><button class="custom-button" id="interactiveButton"></button></a>
+                        </div>
+                            
+                    </div>
+                </div>
+
+                <div class="card bor-card">
+                    <img src="./img/navel.svg" alt="Article Image">
+                    <!-- <img src="11.svg" alt="Article Image"> -->
+                    <div class="card-content">
+                        <h3>Navy's Day</h3>
+                        <p>Catch up on the latest sports highlights. This is a quick teaser of the article.</p>
+                        <a href="./matakhanda/02.html" ><button class="custom-button" id="interactiveButton"></button></a>
+                    </div>
+                </div>
+                
+                
+
+                <div class="card bor-card">
+                    <img src="./img/modi.jpeg" alt="Article Image">
+                    <!-- <img src="modi.jpeg" alt="Article Image"> -->
+                    <div class="card-content">
+                        <h3> Modi's 3 Criminal Laws</h3>
+                        <p>Empowering Justice and Citizen Rights: A Landmark Initiative in India</p>
+                        <a href="./matakhanda/03.html" ><button class="custom-button" id="interactiveButton"></button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div id="Social">
+            Social Media  Connect with Us
+            <div class="soc"><!--<i class="fa-brands fa-instagram"></i>--> <i class="fa-brands fa-square-instagram"></i><a href="https://www.instagram.com/navintamsamacharam">Navintamsamacharam</a> </div> 
+            <div class="soc"><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com/@NavintamSamacharam">NavintamSamacharam</a>  </div>
+            <div class="soc"><i class="fa-brands fa-facebook"></i>Comming Soon </div>
+
+    </div>
+        <p style="text-align: center;">© 2024 Navintam Samacharam. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
