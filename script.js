@@ -30,12 +30,10 @@ function displayArticles(articles) {
     // Generate cards for each article
     const articleCards = articles.map(article => `
         <div class="card">
-            <img src="${article.image || 'https://via.placeholder.com/300x200'}" alt="Article Image">
-            <div class="card-content">
-                <h3>${article.title}</h3>
-                <p>${article.description || 'No description available.'}</p>
-                <a href="${article.url}" target="_blank" class="read-more"><button class="custom-button" id="interactiveButton"></button></a>
-            </div>
+            <div id ="card-content-img"><img src="${article.image || 'https://via.placeholder.com/300x200'}" alt="Article Image"></div>
+            <div id ="card-content-h3">  <h3>${article.title}</h3></div> 
+            <div id ="card-content-p"><p>${article.description || 'No description available.'}</p> </div> 
+            <div id ="card-content-a"><a href="${article.url}" target="_blank" class="read-more"><button class="custom-button" id="interactiveButton"></button></a></div>
         </div>
     `);
 
