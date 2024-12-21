@@ -11,7 +11,7 @@ a{
 }
 #name_website{
     font-size: x-large;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 
@@ -99,39 +99,8 @@ main {
 
 
 /* Footer Styling */
-footer {
-    display: flex;
-    background: linear-gradient(to right, rgb(255, 0, 55), rgb(3, 50, 138));
-    padding: 10px 20px;
-    color: white;
-    margin-bottom: 0px;
-    margin-top: 10px;
-}
-/* Styling for GNews API Section
-#latest-news,
-#gnews-articles {
-    margin: 20px 0;
-    justify-content: space-evenly;
-    
-}
 
-#latest-news h2,
-#gnews-articles h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-} */
 
-/* Shared card styling */
-/* .card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 3px 4px 6px rgba(59, 57, 57, 0.8);
-    transition: transform 0.9s;
-    display: inline;
-} */
 
 .card:hover {
     transform: translateY(-5px);
