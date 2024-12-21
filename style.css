@@ -4,11 +4,7 @@ body, h1,  h3  {
     box-sizing: border-box;
 }
 
-a{
-    text-decoration: none;
-    color: #ffffff;
-    
-}
+
 #name_website{
     font-size: x-large;
     font-weight: 500;
@@ -27,55 +23,13 @@ p{
     
 }
 
-.navbar{
-    display: flex;
-      justify-content: space-between;
-      background: linear-gradient(to right, rgb(255, 0, 55), rgb(138, 3, 138));
-      padding: 10px 20px;
-      color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-}
 
-.navbar-logo {
-    display: flex;
-    
-  }
-
-.navbar-logo img {
-    width: 3rem;
-    height: 100%;
-    margin-right: 1rem;
-}
-
-
-main {
-    padding: 20px;
-}
-
-#latest-news h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 24px;
-    color: #d40808;
-}
-
-/* Articles Container */
-
-    .articles-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-
-    }
-
-/* Card Styling */
 .card {
     background: white;
-    border: 1px solid #ddd;
+    border: 10px solid #000000;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.9);
     transition: transform 0.3s;
     
 }
@@ -96,10 +50,6 @@ main {
     padding: auto;
     margin:  1vh 1vh;
 }
-
-
-/* Footer Styling */
-
 
 
 .card:hover {
@@ -156,7 +106,7 @@ main {
     text-align: right;
     font-size: x-large;
     font-weight: 600;
-    margin: 10px;
+    margin: 20px 30px 10px 30px;
     padding: 10px;
     width: 33%;
 }
@@ -167,7 +117,6 @@ main {
 }
 .footer{
   left: 0;
-  margin-bottom: 0;
   width: 100%;
 }
 b.button-container {
@@ -198,13 +147,12 @@ b.button-container {
     content: "Click Me";
   }
 
-  .custom-button.clicked {
+  .custom-button:active {
     background-color: #15df44;
-  }
-
-  .custom-button.clicked::before {
     content: "Thank You!";
   }
+
+  
   .soc{
     display: flexbox
   }
@@ -239,7 +187,7 @@ p {
     margin-left: 5px;
 }
 
-/* Navbar */
+/* Navbar * imp*/
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -247,7 +195,7 @@ p {
     background: linear-gradient(to right, rgb(255, 0, 55), rgb(138, 3, 138));
     padding: 10px 20px;
     color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 7px 7px rgba(15, 15, 15, 0.9);
 }
 
 /* Navbar Logo */
@@ -287,7 +235,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s;
 }
 
@@ -309,11 +257,12 @@ main {
 footer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center align on smaller screens */
+    /* justify-content: center; Center align on smaller screens */
     background: linear-gradient(to right, rgb(255, 0, 55), rgb(3, 50, 138));
+    box-shadow: 0px 4px 10px rgba(12, 12, 12, 0.9);
     padding: 10px 20px;
     color: white;
-    margin-top: 10px;
+    /* margin-bottom: 0px; */
 }
 
 /* Media Queries for Responsiveness */
@@ -328,6 +277,7 @@ footer {
     #headline, #Social {
         width: 100%; /* Adjust width */
         text-align: center;
+        font-size:large
     }
 
     .articles-container {
@@ -338,7 +288,7 @@ footer {
 /* Small Screens (Phones) */
 @media (max-width: 768px) {
     h2, h3 {
-        font-size: 18px; /* Smaller text size for readability */
+        font-size: 14px; /* Smaller text size for readability */
     }
 
     .card-content-2 h3 {
@@ -367,7 +317,7 @@ footer {
     }
 
     h1, h2, h3 {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .card {
@@ -377,4 +327,12 @@ footer {
     footer {
         text-align: center;
     }
+    
+    #headline{
+        font-size:medium;
+    }
+    #name_website{
+        font-size:medium;
+    }
+
 }
