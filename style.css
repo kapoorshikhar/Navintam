@@ -110,10 +110,13 @@ p{
     padding: 10px;
     width: 33%;
 }
-#Social{
-    width: 33%; 
+.Social{
+    width: 25%; 
     display: block;
-    font-weight: 600;
+    font-weight: 400;
+    margin-left: 4vw;
+    justify-content: center;
+
 }
 .footer{
   left: 0;
@@ -121,31 +124,32 @@ p{
 }
 b.button-container {
     position: fixed;
+    
   }
 
   .custom-button {
     padding: 10px 20px;
+    /* margin: 2vw; */
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background-color: #020202;
-    border: none;
+    background-color: #fa3a0a;
+    border: 1px rgb(219, 150, 22);
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 1s ease, color 1s ease;
+    box-shadow: 2px 2px 2px rgba(207, 17, 17, 0.3)
   }
 
   .custom-button:hover {
-    background-color: #b30009;
+    background-color: #fffefe;
+    color: #fa3a0a;
   }
 
   .custom-button::before {
     content: "Read More";
   }
 
-  .custom-button:hover::before {
-    content: "Click Me";
-  }
 
   .custom-button:active {
     background-color: #15df44;
@@ -174,7 +178,7 @@ a {
 }
 
 #name_website {
-    font-size: x-large;
+    font-size: xx-large;
     font-weight: 900;
     text-shadow: 0px 5px 2px rgba(0, 0, 0, 0.7);
 }
@@ -344,4 +348,8 @@ footer {
 }
 .hidline a{
 text-shadow: -3px 7px 4px rgba(0, 0, 0, 0.9);
+}
+#Social-1{
+    width: 40%; 
+
 }
