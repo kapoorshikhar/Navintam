@@ -9,9 +9,6 @@ body, h1,  h3  {
     font-size: x-large;
     font-weight: 500;
 }
-
-
-
 h2{
  text-align: center;
 }
@@ -106,7 +103,7 @@ p{
     text-align: right;
     font-size: x-large;
     font-weight: 600;
-    margin: 20px 30px 10px 30px;
+    margin: 20px 30px 10px 10px;
     padding: 10px;
     width: 33%;
 }
@@ -116,6 +113,7 @@ p{
     font-weight: 400;
     margin-left: 4vw;
     justify-content: center;
+    text-shadow: 2px 4px 2px rgba(0,0,0,0.8);
 
 }
 .footer{
@@ -142,8 +140,9 @@ b.button-container {
   }
 
   .custom-button:hover {
-    background-color: #fffefe;
+    background-color: white;
     color: #fa3a0a;
+    box-shadow: 2px 7px 8px rgba(255, 0, 0, 0.5)
   }
 
   .custom-button::before {
@@ -165,12 +164,7 @@ b.button-container {
     text-align: center;
     font-weight: 600;
   }
-  /* General Styles */
-body, h1, h3 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 a {
     text-decoration: none;
@@ -237,7 +231,7 @@ main {
 
 /* Card Styling */
 .card {
-    background: white;
+    background: rgb(243, 245, 244);
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -251,24 +245,24 @@ main {
 
 .card img {
     width: 100%;
-    height: auto;
-}
+    height: 40vh}
 
-#card-content-h3, #card-content-p, #card-content-a {
-    padding: auto;
-    margin: 1vh;
+#card-content-p, #card-content-a {
+        padding: auto;
+        margin: 1vh;
+    }
+#card-content-h3{ 
+    text-shadow: px 2px 0px rgba(12, 12, 12, 0.9)
 }
 
 /* Footer */
 footer {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; Center align on smaller screens */
     background: linear-gradient(to right, rgb(255, 0, 55), rgb(3, 50, 138));
     box-shadow: 0px 4px 10px rgba(12, 12, 12, 0.9);
     padding: 10px 20px;
     color: white;
-    /* margin-bottom: 0px; */
 }
 
 /* Media Queries for Responsiveness */
@@ -352,4 +346,22 @@ text-shadow: -3px 7px 4px rgba(0, 0, 0, 0.9);
 #Social-1{
     width: 40%; 
 
+}
+#sec_navbar{
+    display: flexbox;
+    background-color: #ffffff;
+}
+    
+
+.senav {
+    display: inline-flex;
+    padding: 5px 5px;
+}
+.a-c{
+    color: #fff;
+    font-weight: 600;
+    background-color: #58caf7;
+    border-color:#58caf7;
+        /* text-shadow:3px 3px 2px rgba(2, 2, 2, 0.9); */
+    justify-content: space-between;
 }
