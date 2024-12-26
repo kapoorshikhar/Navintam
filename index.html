@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navintam Samacharam</title>
-    <linK rel="shortcut icon" type="x-icon" href="../img/logo.svg">
+    <link rel="shortcut icon" type="x-icon" href="../img/logo.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,59 +12,64 @@
     <navbat>
         <div class="navbar">
             <div class="navbar-logo">
-            <a  href="index.html"><img src="./img/logo.svg" ></a> 
-            <a id="name_website" href="index.html">Navintam Samacharam       </a>
+                <a href="index.html"><img src="./img/logo.svg" alt="Logo"></a> 
+                <a id="name_website" href="index.html">Navintam Samacharam</a>
+            </div>
+        
+            <div id="headline">
+                <div class="hidline"><a href="index.html">Home</a></div>
+                <div class="hidline"><a href="#Matakhandh">Opinion</a></div>    
+                <div class="hidline"><a href="#gnews-articles">Latest News</a></div>        
+                <div class="hidline"><a href="about.html">About Us</a></div>        
+            </div>
         </div>
-   
-        <div id="headline">
-        <div class="hidline">    <a href="index.html">Home</a>              </div>
-        <div class="hidline">    <a href="#Matakhandh">Opinion </a>         </div>    
-        <div class="hidline">    <a href="#gnews-articles">Latest News</a>  </div>        
-        <div class="hidline">    <a href="about.html">About Us</a>          </div>        
-        </div>
-    </div>
     </navbat>
+    <div id="sec_navbar">
+        <!-- <div class="senav" data-category="general">      <button>General</button></div> -->
+        <div class="senav" data-category="world">        <button class="a-c">World</button></div>
+        <div class="senav" data-category="nation">       <button class="a-c">Nation</button></div>
+        <div class="senav" data-category="business">     <button class="a-c">Business</button></div>
+        <div class="senav" data-category="technology">    <button class="a-c">Technology</button></div>
+        <div class="senav" data-category="entertainment"><button class="a-c">Entertainment</button></div>
+        <div class="senav" data-category="sports">       <button class="a-c">Sports</button></div>
+        <div class="senav" data-category="science">     <button class="a-c">Science</button></div>
+        <div class="senav" data-category="health">      <button class="a-c">Health</button></div>
+    </div>
     <main>
         <section id="gnews-articles">
-            <h2>Latest <span id="hes">News</span> </h2>
+            <h2 style="text-shadow: 2px 4px 2px rgba(247, 241, 241, 0.8); background: #ffe865;">Latest <span id="hes" style="text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.8);">News</span></h2>
             <div class="articles-container" id="gnews-container">
-                <!-- Dynamic content from GNews API will be inserted here -->
             </div>
         </section>  
         <section id="Matakhandh">
-           <diV style="background-color: rgb(138, 194, 240); color: #000000;"><h2 >Opinion </h2></diV> 
+           <div style="background-color: rgb(138, 194, 240); color: #000000;"><h2>Opinion</h2></div> 
             <div class="articles-container">
                 <div class="card bor-card">
                     <img src="./img/saverker.jpg" alt="Article Image">
                     <div class="card-content-2">
                         <h3>Savarkar: The Controversial Figure</h3>
-                        <p>Revolution is necessary when natural political evolution is supressed to restore justice</p>
-                        <div >
-                            <a href="./matakhanda/01.html"><button class="custom-button" id="interactiveButton"></button></a>
+                        <p>Revolution is necessary when natural political evolution is suppressed to restore justice</p>
+                        <div>
+                            <a href="./matakhanda/01.html" title="Read more about Savarkar"><button class="custom-button" type="button" id="interactiveButton1"></button></a>
                         </div>
-                            
                     </div>
                 </div>
 
                 <div class="card bor-card">
                     <img src="./img/navel.svg" alt="Article Image">
-                    
                     <div class="card-content-2">
                         <h3>Navy's Day</h3>
                         <p>Catch up on the latest sports highlights. This is a quick teaser of the article.</p>
-                        <a href="./matakhanda/02.html" ><button class="custom-button" id="interactiveButton"></button></a>
+                        <a href="./matakhanda/02.html" title="Read more about Navy's Day"><button class="custom-button" type="button" id="interactiveButton2"></button></a>
                     </div>
                 </div>
-                
-                
 
                 <div class="card bor-card">
                     <img src="./img/modi.jpeg" alt="Article Image">
-                    
                     <div class="card-content-2">
-                        <h3> Modi's 3 Criminal Laws</h3>
+                        <h3>Modi's 3 Criminal Laws</h3>
                         <p>Empowering Justice and Citizen Rights: A Landmark Initiative in India</p>
-                        <a href="./matakhanda/03.html" ><button class="custom-button" id="interactiveButton"></button></a>
+                        <a href="./matakhanda/03.html" title="Read more about Modi's 3 Criminal Laws"><button class="custom-button" type="button" id="interactiveButton3"></button></a>
                     </div>
                 </div>
             </div>
@@ -72,17 +77,14 @@
     </main>
 
     <footer class="footer">
-       <div id="Social-1">
-        
-       </div >
-        <p style="text-align: center; margin-bottom: 2px;">© 2024 Navintam Samacharam. All Rights Reserved.</p>
-        <div class="Social" >
-            Social Media  Connects
-            <div class="soc"><!--<i class="fa-brands fa-instagram"></i>--> <i class="fa-brands fa-square-instagram"></i><a href="https://www.instagram.com/navintamsamacharam">  Navintam Samacharam</a> </div> 
-            <div class="soc"><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com/@NavintamSamacharam">  Navintam Samacharam</a>  </div>
-            <div class="soc"><i class="fa-brands fa-facebook"></i>  Comming Soon </div>
-    
-    </div>
+       <div id="Social-1"></div>
+        <p class="footer-text" style="text-shadow: 2px 4px 2px rgba(0,0,0,0.8); font-weight: 600;">© 2024 Navintam Samacharam. All Rights Reserved.</p>
+        <div class="Social" style="font-weight: 600;">
+            Social Media Connects
+            <div class="soc"><i class="fa-brands fa-square-instagram"></i><a href="https://www.instagram.com/navintamsamacharam">  Navintam Samacharam</a></div> 
+            <div class="soc"><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com/@NavintamSamacharam">  Navintam Samacharam</a></div>
+            <div class="soc"><i class="fa-brands fa-facebook"></i>  Coming Soon </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
