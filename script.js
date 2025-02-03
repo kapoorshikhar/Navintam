@@ -7,15 +7,26 @@ const apiKeys = [
 ];
 
 let currentApiKeyIndex = 0;
-
 const gnewsContainer = document.getElementById('gnews-container');
 
 async function fetchGNewsArticles() {
+    if (currentApiKeyIndex >= apiKeys.length) {
+        gnewsContainer.innerHTML = `<p>Failed to load articles. Please try again later.</p>`;
+        return;
+    }
+
     try {
-        // Fetch top headlines from GNews API
+        const apiKey = apiKeys[currentApiKeyIndex];
         const response = await fetch(
-            `https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=8&token=${apiKeys[currentApiKeyIndex]}`
+            `https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=8&token=${apiKey}`
         );
+
+        if (response.status === 429) {
+            console.warn(`Rate limit reached for API key: ${apiKey}. Switching keys...`);
+            currentApiKeyIndex++;
+            fetchGNewsArticles();
+            return;
+        }
 
         if (!response.ok) {
             throw new Error(`Error fetching GNews articles: ${response.status}`);
@@ -24,18 +35,14 @@ async function fetchGNewsArticles() {
         const data = await response.json();
         displayArticles(data.articles);
     } catch (error) {
-        console.error(error);
-        if (currentApiKeyIndex < apiKeys.length - 1) {
-            currentApiKeyIndex++;
-            fetchGNewsArticles();
-        } else {
-            gnewsContainer.innerHTML = `<p>Failed to load articles. Please try again later.</p>`;
-        }
+        console.error(`Error with API key ${apiKeys[currentApiKeyIndex]}:`, error);
+        currentApiKeyIndex++;
+        fetchGNewsArticles();
     }
 }
 
 function displayArticles(articles) {
-    if (articles.length === 0) {
+    if (!articles || articles.length === 0) {
         gnewsContainer.innerHTML = `<p>No articles available.</p>`;
         return;
     }
@@ -43,10 +50,16 @@ function displayArticles(articles) {
     // Generate cards for each article
     const articleCards = articles.map(article => `
         <div class="card">
-            <div id="card-content-img"><img src="${article.image || 'https://via.placeholder.com/300x200'}" alt="Article Image"></div>
-            <div id="card-content-h3"><h3>${article.title}</h3></div>
-            <div id="card-content-p"><p>${article.description || 'No description available.'}</p></div>
-            <div id="card-content-a"><a href="${article.url}" target="_blank" class="read-more"><button class="custom-button" id="interactiveButton"></button></a></div>
+            <div class="card-content-img">
+                <img src="${article.image || 'https://via.placeholder.com/300x200'}" alt="Article Image">
+            </div>
+            <div class="card-content-h3"><h3>${article.title}</h3></div>
+            <div class="card-content-p"><p>${article.description || 'No description available.'}</p></div>
+            <div class="card-content-a">
+                <a href="${article.url}" target="_blank" class="read-more">
+                    <button class="custom-button interactiveButton">Read More</button>
+                </a>
+            </div>
         </div>
     `);
 
