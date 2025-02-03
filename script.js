@@ -1,4 +1,4 @@
-// GNews API Integration
+// GNews API Keys
 const apiKeys = [
     '6db28cbad383869dd0d986c1ab891236',
     '6faefcd2530c99721f4b17eaf22b2187',
@@ -8,7 +8,9 @@ const apiKeys = [
 
 let currentApiKeyIndex = 0;
 const gnewsContainer = document.getElementById('gnews-container');
+let currentLang = localStorage.getItem("lang") || "en";
 
+// Function to fetch GNews Articles
 async function fetchGNewsArticles() {
     if (currentApiKeyIndex >= apiKeys.length) {
         gnewsContainer.innerHTML = `<p>Failed to load articles. Please try again later.</p>`;
@@ -17,8 +19,9 @@ async function fetchGNewsArticles() {
 
     try {
         const apiKey = apiKeys[currentApiKeyIndex];
+        const langParam = currentLang === "hi" ? "hi" : "en";  // Fetch articles in Hindi if selected
         const response = await fetch(
-            `https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=8&token=${apiKey}`
+            `https://gnews.io/api/v4/top-headlines?lang=${langParam}&country=in&max=8&token=${apiKey}`
         );
 
         if (response.status === 429) {
@@ -41,13 +44,13 @@ async function fetchGNewsArticles() {
     }
 }
 
+// Function to display articles
 function displayArticles(articles) {
     if (!articles || articles.length === 0) {
         gnewsContainer.innerHTML = `<p>No articles available.</p>`;
         return;
     }
 
-    // Generate cards for each article
     const articleCards = articles.map(article => `
         <div class="card">
             <div class="card-content-img">
@@ -63,9 +66,10 @@ function displayArticles(articles) {
         </div>
     `);
 
-    // Insert articles into the container
     gnewsContainer.innerHTML = articleCards.join('');
 }
+
+// Language translations
 const translations = {
     en: {
         home: "Home",
@@ -81,15 +85,10 @@ const translations = {
         science: "Science",
         health: "Health",
         opinionTitle: "Opinion",
-        savarkar: "Savarkar: The Controversial Figure",
-        savarkarDesc: "Revolution is necessary when natural political evolution is suppressed to restore justice",
-        navyDay: "Navy's Day",
-        navyDayDesc: "Catch up on the latest highlights. This is a quick teaser of the article.",
-        modiLaws: "Modi's 3 Criminal Laws",
-        modiLawsDesc: "Empowering Justice and Citizen Rights: A Landmark Initiative in India",
         footer: "© 2024 Navintam Samacharam. All Rights Reserved.",
         socialMedia: "Social Media Connects",
-        toggleText: "🌐 हिंदी"
+        toggleText: "🌐 हिंदी",
+        readMore: "Read More"
     },
     hi: {
         home: "होम",
@@ -105,55 +104,49 @@ const translations = {
         science: "विज्ञान",
         health: "स्वास्थ्य",
         opinionTitle: "मताखंड",
-        savarkar: "सावरकर: विवादास्पद व्यक्ति",
-        savarkarDesc: "क्रांति आवश्यक है जब प्राकृतिक राजनीतिक विकास को दबाया जाता है न्याय बहाल करने के लिए",
-        navyDay: "नौसेना दिवस",
-        navyDayDesc: "नवीनतम हाइलाइट्स के बारे में पढ़ें। यह एक संक्षिप्त पूर्वावलोकन है।",
-        modiLaws: "मोदी के 3 आपराधिक कानून",
-        modiLawsDesc: "न्याय और नागरिक अधिकारों को सशक्त बनाना: भारत में एक ऐतिहासिक पहल",
         footer: "© 2024 नविनतम समाचार। सभी अधिकार सुरक्षित।",
         socialMedia: "सोशल मीडिया कनेक्ट्स",
-        toggleText: "🌐 English"
+        toggleText: "🌐 English",
+        readMore: "अधिक पढ़ें"
     }
 };
 
 // Function to change language
 function changeLanguage() {
-    let currentLang = localStorage.getItem("lang") || "en";
-    let newLang = currentLang === "en" ? "hi" : "en";
-
-    document.querySelector("#toggle-language").textContent = translations[newLang].toggleText;
-    document.querySelector("#headline a:nth-child(1)").textContent = translations[newLang].home;
-    document.querySelector("#headline a:nth-child(2)").textContent = translations[newLang].opinion;
-    document.querySelector("#headline a:nth-child(3)").textContent = translations[newLang].latestNews;
-    document.querySelector("#headline a:nth-child(4)").textContent = translations[newLang].aboutUs;
+    currentLang = currentLang === "en" ? "hi" : "en";
+    
+    document.querySelector("#toggle-language").textContent = translations[currentLang].toggleText;
+    document.querySelector("#headline a:nth-child(1)").textContent = translations[currentLang].home;
+    document.querySelector("#headline a:nth-child(2)").textContent = translations[currentLang].opinion;
+    document.querySelector("#headline a:nth-child(3)").textContent = translations[currentLang].latestNews;
+    document.querySelector("#headline a:nth-child(4)").textContent = translations[currentLang].aboutUs;
 
     let categories = document.querySelectorAll(".senav button");
     let categoryKeys = ["world", "nation", "business", "technology", "entertainment", "sports", "science", "health"];
-    categories.forEach((btn, i) => btn.textContent = translations[newLang][categoryKeys[i]]);
+    categories.forEach((btn, i) => btn.textContent = translations[currentLang][categoryKeys[i]]);
 
-    document.querySelector("#Matakhandh h2").textContent = translations[newLang].opinionTitle;
-    document.querySelector(".card-content-2 h3:nth-child(1)").textContent = translations[newLang].savarkar;
-    document.querySelector(".card-content-2 p:nth-child(2)").textContent = translations[newLang].savarkarDesc;
-    document.querySelector(".card-content-2 h3:nth-child(3)").textContent = translations[newLang].navyDay;
-    document.querySelector(".card-content-2 p:nth-child(4)").textContent = translations[newLang].navyDayDesc;
-    document.querySelector(".card-content-2 h3:nth-child(5)").textContent = translations[newLang].modiLaws;
-    document.querySelector(".card-content-2 p:nth-child(6)").textContent = translations[newLang].modiLawsDesc;
+    document.querySelector(".footer-text").textContent = translations[currentLang].footer;
+    document.querySelector(".Social").firstChild.textContent = translations[currentLang].socialMedia;
 
-    document.querySelector(".footer-text").textContent = translations[newLang].footer;
-    document.querySelector(".Social").firstChild.textContent = translations[newLang].socialMedia;
+    // Change "Read More" buttons in articles
+    document.querySelectorAll(".read-more button").forEach(button => {
+        button.textContent = translations[currentLang].readMore;
+    });
 
-    localStorage.setItem("lang", newLang);
+    localStorage.setItem("lang", currentLang);
+
+    // Fetch news articles in the selected language
+    fetchGNewsArticles();
 }
 
 // Event Listener for Language Toggle Button
 document.querySelector("#toggle-language").addEventListener("click", changeLanguage);
 
-// Load stored language preference on page load
+// Load stored language preference and fetch articles on page load
 document.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("lang") === "hi") changeLanguage();
+    if (localStorage.getItem("lang") === "hi") {
+        changeLanguage(); // This will also fetch news in Hindi
+    } else {
+        fetchGNewsArticles();
+    }
 });
-
-
-// Fetch articles on page load
-document.addEventListener('DOMContentLoaded', fetchGNewsArticles);
